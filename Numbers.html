@@ -1,0 +1,75 @@
+<html>
+<head>
+    <title> Amicable Numbers </title>
+</head>
+
+<body>
+    
+    <form>
+        Number 1: <input type = "text" name = "num1" id = "num1"> <br>
+        Number 2: <input type = "text" name = "num2" id = "num2"> <br>
+        <input type = "button" value = "Calculate" id = "btn1" onclick = "getNums()">
+    </form>
+    
+    
+    
+    
+<script> 
+
+    function getNums(){
+        var x = document.getElementById("num1").value;
+        var y = document.getElementById("num2").value;
+        
+        var xVals = getDigits(x);
+        var yVals =  getDigits(y);
+        
+        var xFactors = xVals[0]
+                
+        x = parseInt(x);
+        y = parseInt(y);
+        
+        alert ("The factors of Number 1 (" + x + ") are: " + xFactors + "\nThe factors of Number 2 (" + y + ") are: " + yVals[0])
+        
+        if(x == yVals[1] && y == xVals[1]){
+            document.getElementById("numDiv").innerHTML = ("The numbers " + x + " and " + y + " are amicable.")
+        }else{
+            document.getElementById("numDiv").innerHTML = ("The numbers " + x + " and " + y + " are not amicable.")
+        }
+        
+    }
+    
+    function getDigits(a){
+        var list = [];
+        for(i=1; i <= a; i++){
+            list = list + [i];
+        }
+        var getFactors = isAFactor(list,a)
+        return getFactors;
+        
+    }
+    
+    function isAFactor(a, b){
+        var factors = [];
+        var sum = 0;
+        for(x in a){
+           if(b % x == 0 && b != x){
+               factors = factors + [x + " "];
+               sum = sum + parseInt(x)
+           }
+        }
+        return [factors, sum];
+    }
+    
+    
+    
+</script>
+    
+    <div id = "numDiv"> 
+            
+    </div>
+    
+    
+    
+</body>
+
+</html>

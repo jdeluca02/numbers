@@ -22,13 +22,12 @@
         
         var xVals = getDigits(x);
         var yVals =  getDigits(y);
-        
-        var xFactors = xVals[0]
+                
                 
         x = parseInt(x);
         y = parseInt(y);
         
-        alert ("The factors of Number 1 (" + x + ") are: " + xFactors + "\nThe factors of Number 2 (" + y + ") are: " + yVals[0])
+        alert ("The factors of Number 1 (" + x + ") are: " + xVals[0] + "\nThe factors of Number 2 (" + y + ") are: " + yVals[0])
         
         if(x == yVals[1] && y == xVals[1]){
             document.getElementById("numDiv").innerHTML = ("The numbers " + x + " and " + y + " are amicable.")
